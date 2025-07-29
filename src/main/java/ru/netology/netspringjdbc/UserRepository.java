@@ -14,7 +14,7 @@ public class UserRepository {
 
     public List<String> getProductName(String name) {
         return em
-                .createQuery("select o.productName from Orders o where o.customers.name =: name")
+                .createQuery("select o.productName from Order o where o.customers.name =: name")
                 .setParameter("name", name)
                 .getResultList();
     }
